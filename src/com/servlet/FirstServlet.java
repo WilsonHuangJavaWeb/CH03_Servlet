@@ -53,7 +53,7 @@ public class FirstServlet extends HttpServlet {
                 "<input type='text' name='param' value='param string'>" +
                 "<input type='submit' value='以POST方式傳送到頁面" + requestURI + "'></form>");
 
-        out.println("<script>documment.write('本頁面最後更新時間：'+documment.lastModified);</script>");
+        out.println("<script>document.write('本頁面最後更新時間：'+document.lastModified);</script>");
         out.println("</BODY>");
         out.println("</HTML>");
 
