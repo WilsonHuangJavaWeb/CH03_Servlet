@@ -16,8 +16,25 @@
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
+    <servlet>
+        <servlet-name>RequsetServlet</servlet-name>
+        <servlet-class>com.servlet.RequestServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>IdentityServlet</servlet-name>
+        <servlet-class>com.servlet.IdentityServlet</servlet-class>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>FirstServlet</servlet-name>
         <url-pattern>/servlet/FirstServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RequsetServlet</servlet-name>
+        <url-pattern>/servlet/RequestServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>IdentityServlet</servlet-name>
+        <url-pattern>/servlet/IdentityServlet</url-pattern>
     </servlet-mapping>
 </web-app>
