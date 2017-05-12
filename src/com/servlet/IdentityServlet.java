@@ -28,21 +28,37 @@ public class IdentityServlet extends HttpServlet {
             'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N',
             'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
 
-    public static Random random = new Random();
+    public static Random random = new Random();//亂數
 
+    /**
+     * 獲得六位亂數
+     *
+     * @return
+     */
     public static String getRandomString() {
-        StringBuffer buffer = new StringBuffer();
-        for (int i = 1; i < 6; i++) {
-            buffer.append(CHARS[random.nextInt()]);
+        StringBuffer buffer = new StringBuffer();   //字元快取記憶體
+        for (int i = 1; i < 6; i++) {               //迴圈六次
+            buffer.append(CHARS[random.nextInt(CHARS.length)]); //每次取一個隨機字元
         }
         return buffer.toString();
     }
 
+    /**
+     * 獲得隨機的顏色
+     *
+     * @return
+     */
     public static Color getRandomColor() {
         return new Color(random.nextInt(255), random.nextInt(255), random.nextInt(255));
 
     }
 
+    /**
+     * 傳回某顏色的反色
+     *
+     * @param c
+     * @return
+     */
     public static Color getReverseColor(Color c) {
         return new Color(255 - c.getRed(), 255 - c.getGreen(), 255 - c.getBlue());
     }
@@ -52,32 +68,33 @@ public class IdentityServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("image/jpeg");
-        String randomString = getRandomString();
-        request.getSession(true).setAttribute("randomString", randomString);
 
-        int width = 100;
-        int height = 30;
+        response.setContentType("image/jpeg");//設定輸出類型(必須)
+        String randomString = getRandomString();//隨機字串
+        request.getSession(true).setAttribute("randomString", randomString);//放入session中
 
-        Color color = getRandomColor();
-        Color reverse = getReverseColor(color);
+        int width = 100;//圖片的寬
+        int height = 30;//圖片的高
 
-        BufferedImage bufferedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
-        Graphics2D graphics2D = bufferedImage.createGraphics();
-        graphics2D.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 16));
-        graphics2D.setColor(color);
-        graphics2D.fillRect(0, 0, width, height);
-        graphics2D.setColor(reverse);
-        graphics2D.drawString(randomString, 18, 20);
-        for (int i = 0, n = random.nextInt(); i < n; i++) {
-            graphics2D.drawRect(random.nextInt(width), random.nextInt(height), 1, 1);
+        Color color = getRandomColor();//隨機顏色，用於背景色
+        Color reverse = getReverseColor(color);//反色，用於前景色
+
+        BufferedImage bufferedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);//建立一個彩色圖片
+        Graphics2D graphics2D = bufferedImage.createGraphics();//獲得繪圖物件
+        graphics2D.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 16));//設定字體
+        graphics2D.setColor(color);//設定顏色
+        graphics2D.fillRect(0, 0, width, height);//設定背景
+        graphics2D.setColor(reverse);//設定顏色
+        graphics2D.drawString(randomString, 18, 20);//繪製隨機字元
+        for (int i = 0, n = random.nextInt(100); i < n; i++) {//話最多100個噪音點
+            graphics2D.drawRect(random.nextInt(width), random.nextInt(height), 1, 1);//隨機噪音點
         }
 
-        ServletOutputStream out = response.getOutputStream();
-        JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(out);
+        ServletOutputStream out = response.getOutputStream();//轉成JPEG格式
+        JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(out);//編碼器
 
-        encoder.encode(bufferedImage);
-        out.flush();
+        encoder.encode(bufferedImage);//對圖片進行編碼
+        out.flush();//輸出到用戶端
 
 
     }

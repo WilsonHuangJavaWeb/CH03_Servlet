@@ -124,7 +124,7 @@ public class RequestServlet extends HttpServlet {
         String localAddr = request.getLocalAddr();                      //本機IP，即伺服器IP
         String localName = request.getLocalName();                      //本機名稱，即伺服器名稱
         int localPort = request.getLocalPort();                         //本機通訊埠號，即Tomcat通訊埠號
-        Locale locale = request.getLocale();                           //使用者的語言環境
+        Locale locale = request.getLocale();                            //使用者的語言環境
         String contextPath = request.getContextPath();                  //context路徑
         String method = request.getMethod();                            //GET 還是 POST
         String pathInfo = request.getPathInfo();
