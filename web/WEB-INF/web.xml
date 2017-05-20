@@ -24,6 +24,24 @@
         <servlet-name>IdentityServlet</servlet-name>
         <servlet-class>com.servlet.IdentityServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>InitParamServlet</servlet-name>
+        <servlet-class>com.servlet.InitParamServlet</servlet-class>
+        <!--初始化參數-->
+        <init-param>
+            <param-name>helloween</param-name>
+            <param-value>password</param-value>
+        </init-param>
+        <init-param>
+            <param-name>admin</param-name>
+            <param-value>admin</param-value>
+        </init-param>
+        <init-param>
+            <param-name>babyface</param-name>
+            <param-value>babyface</param-value>
+        </init-param>
+    </servlet>
+
 
     <servlet-mapping>
         <servlet-name>FirstServlet</servlet-name>
@@ -36,5 +54,9 @@
     <servlet-mapping>
         <servlet-name>IdentityServlet</servlet-name>
         <url-pattern>/servlet/IdentityServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InitParamServlet</servlet-name>
+        <url-pattern>/servlet/InitParamServlet</url-pattern>
     </servlet-mapping>
 </web-app>
