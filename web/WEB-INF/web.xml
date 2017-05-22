@@ -3,6 +3,17 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+
+    <context-param>
+        <param-name>upload folder</param-name>
+        <param-value>attachement</param-value>
+    </context-param>
+    <context-param>
+        <param-name>allowed file type</param-name>
+        <param-value>.gif,.hpg,.bmp</param-value>
+    </context-param>
+
+
     <servlet>
         <servlet-name>FirstServlet</servlet-name>
         <servlet-class>com.servlet.FirstServlet</servlet-class>
@@ -25,6 +36,10 @@
         <servlet-class>com.servlet.IdentityServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>ContextParamServlet</servlet-name>
+        <servlet-class>com.servlet.ContextParamServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>InitParamServlet</servlet-name>
         <servlet-class>com.servlet.InitParamServlet</servlet-class>
         <!--初始化參數-->
@@ -39,6 +54,10 @@
         <init-param>
             <param-name>babyface</param-name>
             <param-value>babyface</param-value>
+        </init-param>
+        <init-param>
+            <param-name>Peter</param-name>
+            <param-value>Peter</param-value>
         </init-param>
     </servlet>
 
@@ -58,5 +77,9 @@
     <servlet-mapping>
         <servlet-name>InitParamServlet</servlet-name>
         <url-pattern>/servlet/InitParamServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ContextParamServlet</servlet-name>
+        <url-pattern>/servlet/ContextParamServlet</url-pattern>
     </servlet-mapping>
 </web-app>
