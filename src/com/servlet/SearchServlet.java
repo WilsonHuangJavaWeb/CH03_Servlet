@@ -1,14 +1,20 @@
 package com.servlet;
 
+import com.yahoo.search.ImageSearchRequest;
+import com.yahoo.search.ImageSearchResult;
+import com.yahoo.search.ImageSearchResults;
+import com.yahoo.search.SearchClient;
+
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.math.BigInteger;
+import java.net.URLEncoder;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 
 
 /**
@@ -48,7 +54,29 @@ public class SearchServlet extends HttpServlet {
         out.println("   </div>");
         out.println("   </form>");
 
+        SearchClient client = new SearchClient("javasdktest");
+        try {
+            if ("image".equals(type)) {
+                ImageSearchRequest searchRequest = new ImageSearchRequest(URLEncoder.encode(word, "UTF-8"));
+                searchRequest.setAdultOk(adultOK);
+                searchRequest.setResults(20);
+                searchRequest.setStart(BigInteger.valueOf(0));
+                double startTime = System.currentTimeMillis();
+                ImageSearchResults results = client.imageSearch(searchRequest);
+                double endTime = System.currentTimeMillis();
+                out.println("<div align='right' style='width:100%; background:#FFDDDD; height:25px;" +
+                        " padding=2px; border-top:1px solid #FF9999; margin-bottom:5px '>");
+                out.println("  總共 " + results.getTotalResultsAvailable() + " 條資料，總用時 " + (startTime - endTime) / 1000 + " 秒。");
+                out.println("</div>");
+                for (ImageSearchResult result : results.listResults()) {
+                    out.println("<div class='imgDiv'>");
+                    out.println("   <div align='center'><a href='" + result.getClickUrl() + "' target=_blank><img width=160 height=120 src=\""
+                            + result.getThumbnail().getUrl() + "\" border='0'></a></div>");
+                }
+            }
+        } catch (Exception e) {
 
+        }
     }
 
 }
