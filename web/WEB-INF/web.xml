@@ -60,6 +60,14 @@
             <param-value>Peter</param-value>
         </init-param>
     </servlet>
+    <servlet>
+        <servlet-name>InjectionServlet</servlet-name>
+        <servlet-class>com.servlet.InjectionServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchServlet</servlet-name>
+        <servlet-class>com.servlet.SearchServlet</servlet-class>
+    </servlet>
 
 
     <servlet-mapping>
@@ -82,4 +90,29 @@
         <servlet-name>ContextParamServlet</servlet-name>
         <url-pattern>/servlet/ContextParamServlet</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InjectionServlet</servlet-name>
+        <url-pattern>/servlet/InjectionServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchServlet</servlet-name>
+        <url-pattern>/servlet/SearchServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--以下為資源設定-->
+    <env-entry>
+        <env-entry-name>hellow</env-entry-name>
+        <env-entry-type>java.lang.String</env-entry-type>
+        <env-entry-value>Hello, Welcome to the JavaEE Resource Injection.</env-entry-value>
+    </env-entry>
+    <env-entry>
+        <env-entry-name>i</env-entry-name>
+        <env-entry-type>java.lang.Integer</env-entry-type>
+        <env-entry-value>30</env-entry-value>
+    </env-entry>
+    <env-entry>
+        <env-entry-name>persons</env-entry-name>
+        <env-entry-type>java.lang.String</env-entry-type>
+        <env-entry-value>Helloween, Cobain, Roses, Axl, </env-entry-value>
+    </env-entry>
 </web-app>

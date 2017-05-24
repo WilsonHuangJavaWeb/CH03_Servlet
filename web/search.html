@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" http-equiv="content-type" content="text/html">
+    <title>search.html</title>
+    <style>div, body, span {
+        font-size: 14px
+    }</style>
+</head>
+<body>
+<div align="center">
+    <img src="https://s1.yimg.com/rz/d/yahoo_frontpage_zh-Hant-TW_s_f_p_bestfit_frontpage_2x.png"
+         style="margin:25px;">
+    <div>
+        <form action="servlet/SearchServlet" method="get">
+            <input type="radio" name="type" value="web" checked>網頁
+            <input type="radio" name="type" value="news">新聞
+            <input type="radio" name="type" value="image">圖片
+            <input type="radio" name="type" value="video">視訊 &nbsp;&nbsp;
+            <input type="checkbox" name="allowedAdult" value="true">允許成人內容<br/><br/>
+            <input type="text" name="word" value="" style="width: 300px;">
+            <input type="submit" value="用雅虎搜尋" style="width: 100px;">
+        </form>
+    </div>
+    <div style="margin-top: 50px">
+        &copy; Wilson 2017
+    </div>
+</div>
+</body>
+</html>
