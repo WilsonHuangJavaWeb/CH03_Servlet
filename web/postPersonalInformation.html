@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>傳送使用者資訊</title>
+    <meta http-equiv="content-type" content="text/html" charset="UTF-8">
+    <style>body, div, td, input {
+        font-size: 12px;
+        margin: 0px;
+    }
+
+    select {
+        height: 20px;
+        width: 300px;
+    }
+
+    .title {
+        font-size: 16px;
+        padding: 10px;
+        margin: 10px;
+        width: 80%;
+    }
+
+    .text {
+        height: 20px;
+        width: 300px;
+        border: 1px solid #AAAAAA;
+    }
+
+    .line {
+        margin: 2px;
+    }
+
+    .leftDiv {
+        width: 110px;
+        float: left;
+        height: 22px;
+        line-height: 22px;
+        font-weight: bold;
+    }
+
+    .rightDiv {
+        height: 22px;
+    }
+
+    .button {
+        color: #fff;
+        font-weight: bold;
+        font-size: 11px;
+        text-align: center;
+        padding: .17em 0 .2em .17em;
+        border-style: solid;
+        border-width: 1px;
+        border-color: #9cf #159 #159 #9cf;
+        background: #69c url(images/bg-btn-blue.gif) repeat-x;
+    }</style>
+</head>
+<body>
+<form action="/servlet/PostServlet" method="post">
+    <div align="center" k>
+        <br/>
+        <fieldset style="width: 90%;">
+            <legend>填寫用戶訊息</legend>
+            <br/>
+            <div class="line">
+                <div align="left" class="leftDiv">請填寫您的姓名:</div>
+                <div align="left" class="rightDiv">
+                    <input type="text" name="name" class="text"/>
+                </div>
+            </div>
+            <div class="line">
+                <div align="left" class="leftDiv">請填寫您的密碼:</div>
+                <div align="left" class="rightDiv">
+                    <input type="password" name="password" class="text"/>
+                </div>
+            </div>
+            <div class="line">
+                <div align="left" class="leftDiv">請再次輸入密碼:</div>
+                <div align="left" class="rightDiv">
+                    <input type="password" name="passwordConfirm" class="text">
+                </div>
+            </div>
+            <div class="line">
+                <div align="left" class="leftDiv">請選擇性別:</div>
+                <div align="left" class="rightDiv">
+                    <input type="radio" name="sex" value="男" id="sexMale"><label
+                        for="sexMale">男</label>
+                    <input type="radio" name="sex" value="女" id="sexFemale">
+                    <lable for="sexFemale">女</lable>
+                </div>
+            </div>
+            <div class="line">
+                <div align="left" class="leftDiv">請輸入年齡:</div>
+                <div align="left" class="rightDiv">
+                    <input type="text" name="age" class="text">
+                </div>
+            </div>
+            <div class="line">
+                <div align="left" class="leftDiv">請輸入生日:</div>
+                <div align="left" class="rightDiv">
+                    <input type="text" name="birthday" class="text">&nbsp;&nbsp;&nbsp;格式:"yyyy-mm-dd"
+                </div>
+            </div>
+            <div class="line">
+                <div align="left" class="leftDiv">請輸入您的愛好:</div>
+                <div align="left" class="rightDiv">
+                    <input type="checkbox" name="interesting" value="音樂影視" id="i1">
+                    <label for="i1">音樂影視</label>
+                    <input type="checkbox" name="interesting" value="外出旅遊" id="i2">
+                    <label for="i2">外出旅遊</label>
+                    <input type="checkbox" name="interesting" value="社交活動" id="i3">
+                    <label for="i3">社交活動</label>
+                </div>
+            </div>
+            <div class="line">
+                <div align="left" class="leftDiv">請選擇地區:</div>
+                <div align="left" class="rightDiv">
+                    <select name="area">
+                        <option>---請選擇地區---</option>
+                        <optgroup label="高雄市">
+                            <option value="高雄市OO區">OO區</option>
+                            <option value="高雄市XX區">XX區</option>
+                        </optgroup>
+                        <optgroup label="台北市">
+                            <option value="台北市WW區">WW區</option>
+                            <option value="台北市YY區">YY區</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+            <div class="line">
+                <div align="left" class="leftDiv">自我描述</div>
+                <div align="left" class="rightdiv">
+                    <textarea name="description" rows="8"
+                              style="width: 300px;">請填寫其他資料...</textarea>
+                </div>
+            </div>
+            <div class="line">
+                <div align="left" class="leftDiv"></div>
+                <div align="left" class="rightdiv">
+                    <br/>
+                    <input type="submit" name="btn" value="提交信息" class="button">
+                    <br/>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>上傳文件</title>
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html" charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<form action="servlet/UploadServlet" method="post" enctype="multipart/form-data">
+    <div align="center"><br/>
+        <fieldset style="width:90px;">
+            <legend>上傳文件</legend>
+            <br/>
+            <div class="line">
+                <div align="left" class="leftDiv">上傳文件一</div>
+                <div align="left" class="rightdiv">
+                    <input type="file" name="file1" class="text">
+                </div>
+            </div>
+            <div class="line">
+                <div align="left" class="leftDiv">上傳文件二</div>
+                <div align="left" class="rightdiv">
+                    <input type="file" name="file2" class="text">
+                </div>
+            </div>
+
+        </fieldset>
+    </div>
+</form>
+</body>
+</html>

@@ -68,6 +68,14 @@
         <servlet-name>SearchServlet</servlet-name>
         <servlet-class>com.servlet.SearchServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PostServlet</servlet-name>
+        <servlet-class>com.servlet.PostServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UploadServlet</servlet-name>
+        <servlet-class>com.servlet.UploadServlet</servlet-class>
+    </servlet>
 
 
     <servlet-mapping>
@@ -98,6 +106,14 @@
         <servlet-name>SearchServlet</servlet-name>
         <url-pattern>/servlet/SearchServlet</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PostServlet</servlet-name>
+        <url-pattern>/servlet/PostServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UploadServlet</servlet-name>
+        <url-pattern>/servlet/UploadServlet</url-pattern>
+    </servlet-mapping>
 
     <!--以下為資源設定-->
     <env-entry>
@@ -113,6 +129,6 @@
     <env-entry>
         <env-entry-name>persons</env-entry-name>
         <env-entry-type>java.lang.String</env-entry-type>
-        <env-entry-value>Helloween, Cobain, Roses, Axl, </env-entry-value>
+        <env-entry-value>Helloween, Cobain, Roses, Axl,</env-entry-value>
     </env-entry>
 </web-app>
