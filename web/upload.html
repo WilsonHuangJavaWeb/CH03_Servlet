@@ -11,22 +11,26 @@
 <body>
 <form action="servlet/UploadServlet" method="post" enctype="multipart/form-data">
     <div align="center"><br/>
-        <fieldset style="width:90px;">
+        <fieldset style="width: 90%;">
             <legend>上傳文件</legend>
-            <br/>
             <div class="line">
                 <div align="left" class="leftDiv">上傳文件一</div>
-                <div align="left" class="rightdiv">
+                <div align="left" class="rightDiv">
                     <input type="file" name="file1" class="text">
                 </div>
             </div>
             <div class="line">
                 <div align="left" class="leftDiv">上傳文件二</div>
-                <div align="left" class="rightdiv">
-                    <input type="file" name="file2" class="text">
+                <div align="left" class="rightDiv">
+                    <input type="file" name="flie2" class="text">
                 </div>
             </div>
-
+            <div class="line">
+                <div align="left" class="leftDiv">上傳文件說明一</div>
+                <div align="left" class="rightDiv">
+                    <input type="text" name="description1" class="text">
+                </div>
+            </div>
         </fieldset>
     </div>
 </form>
