@@ -9,6 +9,7 @@
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="yahoo_search-2.0.1" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/yahoo_search-2.0.1.jar" />
         </element>
       </element>
     </root>
