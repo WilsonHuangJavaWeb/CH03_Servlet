@@ -23,7 +23,6 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "UploadServlet")
 public class UploadServlet extends HttpServlet {
-    private static final long serialVersionUID = 7523024737218332088L;
 
     @SuppressWarnings("nuchecked")
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -110,26 +109,47 @@ public class UploadServlet extends HttpServlet {
             out.println("Request解析完畢");
         } catch (Exception e) {
             e.printStackTrace();
+            out.println("解析失敗"+e);
         }
-        out.println("</div>");
-        out.println("</div>");
+
+
+        out.println("                   </div>");
+        out.println("               </div>");
 
         if (file1 != null) {
-            out.println("<div clasee='line'>");
-            out.println("   <div align='left' class='leftDiv'>file1:</div>");
-            out.println("   <div align='left; class='rigthDiv>");
-            out.println("       <a href='" + request.getContextPath() + "/attachment/" + file1.getName() + "' target=_blank>" + file1.getName() + "</a>");
-            out.println("   </div>");
-            out.println("</div>");
+            out.println("           <div class='line'>");
+            out.println("               <div align='left' class='leftDiv'>file1:</div>");
+            out.println("               <div align='left; class='rigthDiv>");
+            out.println("                   <a href='" + request.getContextPath() + "/attachment/" + file1.getName() + "' target=_blank>" + file1.getName() + "</a>");
+            out.println("               </div>");
+            out.println("           </div>");
         }
         if (file2 != null) {
-            out.println("<div class='line'>");
-            out.println("   <div align='left' class='leftDiv'>file2:</div>");
-            out.println("   <div align='left' class='rightDvi'>");
-            out.println("       <a href='" + request.getContextPath() + "/attachment/" + URLEncoder.encode(file2.getName(), "UTF-8") + "' target=_blank>" + file2.getName() + "</a>");
-            out.println("   </div>");
-            out.println("</div>");
+            out.println("           <div class='line'>");
+            out.println("               <div align='left' class='leftDiv'>file2:</div>");
+            out.println("               <div align='left' class='rightDvi'>");
+            out.println("                   <a href='" + request.getContextPath() + "/attachment/" + URLEncoder.encode(file2.getName(), "UTF-8") + "' target=_blank>" + file2.getName() + "</a>");
+            out.println("               </div>");
+            out.println("           </div>");
         }
+
+        out.println("               <div class='line'>");
+        out.println("                   <div align='left' class='leftDiv'>description1:</div>");
+        out.println("                   <div align='left' class='rightDiv'>" + description1 + "</div>");
+        out.println("               </div>");
+
+        out.println("               <div class='line'>");
+        out.println("                   <div align='left' class='leftDiv'>description2:</div>");
+        out.println("                   <div align='left' class='rightDiv'>" + description2 + "</div>");
+        out.println("               </div>");
+
+        out.println("           </fieldset></div>");
+
+        out.println("   </body>");
+        out.println("</html>");
+        out.flush();
+        out.close();
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
