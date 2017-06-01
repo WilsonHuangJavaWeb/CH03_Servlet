@@ -76,6 +76,10 @@
         <servlet-name>UploadServlet</servlet-name>
         <servlet-class>com.servlet.UploadServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ProgressUploadServlet</servlet-name>
+        <servlet-class>com.servlet.upload.ProgressUploadServlet</servlet-class>
+    </servlet>
 
 
     <servlet-mapping>
@@ -114,6 +118,11 @@
         <servlet-name>UploadServlet</servlet-name>
         <url-pattern>/servlet/UploadServlet</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProgressUploadServlet</servlet-name>
+        <url-pattern>/servlet/upload/ProgressUploadServlet</url-pattern>
+    </servlet-mapping>
+
 
     <!--以下為資源設定-->
     <env-entry>
