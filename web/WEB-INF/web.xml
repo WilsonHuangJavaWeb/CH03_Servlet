@@ -80,6 +80,14 @@
         <servlet-name>ProgressUploadServlet</servlet-name>
         <servlet-class>com.servlet.upload.ProgressUploadServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LifeCycleServlet</servlet-name>
+        <servlet-class>com.servlet.LifeCycleServlet</servlet-class>
+        <init-param>
+            <param-name>startPoint</param-name>
+            <param-value>1600</param-value>
+        </init-param>
+    </servlet>
 
 
     <servlet-mapping>
@@ -121,6 +129,10 @@
     <servlet-mapping>
         <servlet-name>ProgressUploadServlet</servlet-name>
         <url-pattern>/servlet/upload/ProgressUploadServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LifeCycleServlet</servlet-name>
+        <url-pattern>/servlet/LifeCycleServlet</url-pattern>
     </servlet-mapping>
 
 

@@ -44,20 +44,26 @@ public class ProgressUploadServlet extends HttpServlet {
                     System.out.println("FormField: " + item.getFieldName() + " = " + item.getString());
                 } else {//否則就是上傳的檔案
                     System.out.println("File: " + item.getName());
+
                     String fileName = item.getName().replace("/", "\\");//統一Linux與Windows的路徑分隔符號
                     fileName = fileName.substring(fileName.lastIndexOf("\\"));
-                    File saved = new File("D:\\upload_test", fileName);//建立檔案物件
+
+                    File saved = new File("C:\\upload_test", fileName);//建立檔案物件
                     saved.getParentFile().mkdirs();//保證路徑存在
+
                     InputStream inputStream = item.getInputStream();//傳送的檔案內容
                     OutputStream outputStream = new FileOutputStream(saved);//輸出串流
 
                     byte[] tmp = new byte[1024];//快取記憶體
                     int len = -1;//快取記憶的實際長度
+
                     while ((len = inputStream.read(tmp)) != -1) {
                         outputStream.write(tmp, 0, len);//寫入檔案
                     }
+
                     outputStream.close();//關閉串流
                     inputStream.close();//關閉串流
+
                     response.getWriter().println("已儲存檔案:" + saved);
                 }
 
@@ -80,7 +86,7 @@ public class ProgressUploadServlet extends HttpServlet {
         UploadStatus status = (UploadStatus) request.getSession(true).getAttribute("uploadStatus");//從Session中讀取上傳資訊
 
         if (status == null) {//如果沒有上傳資訊
-            response.getWriter().println("沒有上傳資訊");
+            response.getWriter().println("no upload!!!");
             return;
         }
 
@@ -97,7 +103,7 @@ public class ProgressUploadServlet extends HttpServlet {
         //格式:百分比||已完成數(M)||檔案總長度(M)||傳輸速率(K)||已用時間(S)||估計總時間(S)||估計剩餘時間(S)||正在上傳第幾個檔案
         String value = percent + "||" + length + "||" + totalLength + "||" + velocity + "||" + time + "||" + totalTime + "||" + timeLeft + "||" + status.getItems();
 
-        response.getWriter().println(value);//輸出給瀏覽器進度條
+        response.getWriter().println(value);
 
     }
 }
