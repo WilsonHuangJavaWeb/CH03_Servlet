@@ -109,13 +109,12 @@ public class LifeCycleServlet extends HttpServlet {
         out.println("<html><head><title>個人所得稅計算</title></head></html>");
         out.println("<div align='center' ><br/><fieldset style=width:90%><legend>所得稅計算</legend><br/>");
         out.println("<form method='post'>");
-        out.println("<div style='line'>");
-        out.println("   <div class='leftDiv'>您的薪水為</div><div align='left' class='rightDvi'><input type='text' name='income'> 單位:元</div>");
-        out.println("</div><br/>");
-
-        out.println("<div sytle='line'>");
-        out.println("   <div class='leftDiv' ></div> <div align='left' class='rightDiv'><input type='submit' value=' 計算所得稅 ' class=button></div>");
-        out.println("</div>");
+        out.println("   <div style='line'>");
+        out.println("       <div class='leftDiv'>您的薪水為</div><div align='left' class='rightDvi'><input type='text' name='income'> 單位:元</div>");
+        out.println("   </div><br/>");
+        out.println("   <div sytle='line'>");
+        out.println("       <div class='leftDiv'></div><div align='left' class='rightDiv'><input type='submit' value=' 計算所得稅 ' class=button></div>");
+        out.println("   </div>");
         out.println("</form>");
         out.println("<body>");
         out.println("</body>");
