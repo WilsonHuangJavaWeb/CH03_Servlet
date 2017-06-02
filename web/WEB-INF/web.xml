@@ -88,6 +88,14 @@
             <param-value>1600</param-value>
         </init-param>
     </servlet>
+    <servlet>
+        <servlet-name>AnnotationServlet</servlet-name>
+        <servlet-class>com.servlet.AnnotationServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ForwardServlet</servlet-name>
+        <servlet-class>com.servlet.ForwardServlet</servlet-class>
+    </servlet>
 
 
     <servlet-mapping>
@@ -133,6 +141,14 @@
     <servlet-mapping>
         <servlet-name>LifeCycleServlet</servlet-name>
         <url-pattern>/servlet/LifeCycleServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AnnotationServlet</servlet-name>
+        <url-pattern>/servlet/AnnotationServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ForwardServlet</servlet-name>
+        <url-pattern>com.servlet.ForwardServlet</url-pattern>
     </servlet-mapping>
 
 

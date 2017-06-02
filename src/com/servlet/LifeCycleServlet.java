@@ -100,6 +100,7 @@ public class LifeCycleServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        this.log("執行 doGet() 方法....");
         response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html");
 
@@ -128,4 +129,5 @@ public class LifeCycleServlet extends HttpServlet {
         this.log("執行 destroy() 方法....");
         startPoint = 0;
     }
+
 }
