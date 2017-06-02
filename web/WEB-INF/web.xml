@@ -148,7 +148,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ForwardServlet</servlet-name>
-        <url-pattern>com.servlet.ForwardServlet</url-pattern>
+        <url-pattern>/servlet/ForwardServlet</url-pattern>
     </servlet-mapping>
 
 
