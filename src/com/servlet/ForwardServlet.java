@@ -36,6 +36,7 @@ public class ForwardServlet extends HttpServlet {
             requestDispatcher.forward(request, response);
 
         } else {
+            response.setContentType("text/html");
             response.setCharacterEncoding("UTF-8");
             response.getWriter().println("缺少參數。用法:" + request.getRequestURL() + "?destination=jsp 或者 file 或者 servlet ");
         }

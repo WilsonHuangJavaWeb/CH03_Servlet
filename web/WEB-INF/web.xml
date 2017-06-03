@@ -96,6 +96,14 @@
         <servlet-name>ForwardServlet</servlet-name>
         <servlet-class>com.servlet.ForwardServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RedirectServlet</servlet-name>
+        <servlet-class>com.servlet.RedirectServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RefreshServlet</servlet-name>
+        <servlet-class>com.servlet.RefreshServlet</servlet-class>
+    </servlet>
 
 
     <servlet-mapping>
@@ -150,7 +158,14 @@
         <servlet-name>ForwardServlet</servlet-name>
         <url-pattern>/servlet/ForwardServlet</url-pattern>
     </servlet-mapping>
-
+    <servlet-mapping>
+        <servlet-name>RedirectServlet</servlet-name>
+        <url-pattern>/servlet/RedirectServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RefreshServlet</servlet-name>
+        <url-pattern>/servlet/RefreshSevlet</url-pattern>
+    </servlet-mapping>
 
     <!--以下為資源設定-->
     <env-entry>
