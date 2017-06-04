@@ -104,6 +104,10 @@
         <servlet-name>RefreshServlet</servlet-name>
         <servlet-class>com.servlet.RefreshServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ThreadSafetyServlet</servlet-name>
+        <servlet-class>com.servlet.ThreadSafetyServlet</servlet-class>
+    </servlet>
 
 
     <servlet-mapping>
@@ -164,7 +168,11 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>RefreshServlet</servlet-name>
-        <url-pattern>/servlet/RefreshSevlet</url-pattern>
+        <url-pattern>/servlet/RefreshServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ThreadSafetyServlet</servlet-name>
+        <url-pattern>/servlet/ThreadSafetyServlet</url-pattern>
     </servlet-mapping>
 
     <!--以下為資源設定-->
